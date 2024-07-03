@@ -13,21 +13,29 @@ function showTags(i) {
     var modal = document.getElementById("myModal");
     var modalBody = document.getElementById("modalBody");
 
-    res[i].tg.forEach(keyword => {
-        const span = document.createElement('span');
-        span.textContent = keyword;
-        span.className = 'keyword';
-        modalBody.appendChild(span);
+    if (res[i].tg.length !== 0) {
+        res[i].tg.forEach(keyword => {
+            const span = document.createElement('span');
+            span.textContent = keyword;
+            span.className = 'keyword';
+            modalBody.appendChild(span);
 
-        // Add click event listener for selection
-        span.addEventListener('click', () => {
-            span.classList.toggle('selected');
-            updateSelectedKeywords();
+            // Add click event listener for selection
+            span.addEventListener('click', () => {
+                span.classList.toggle('selected');
+                updateSelectedKeywords();
+            });
+
         });
-
-    });
+    }
+    else {
+        let p = document.createElement("p");
+        p.innerHTML = "No tags available";
+        modalBody.appendChild(p);
+    }
     modal.style.display = "block";
 }
+
 
 // Function to update selected keywords
 function updateSelectedKeywords() {
