@@ -15,7 +15,10 @@ function getYoutubeVideoId(url) {
 }
 
 
+
 async function run() {
+    document.getElementById('data').innerHTML = '';
+
     var url = document.getElementById('url').value;
     const linksArr = url.split(" ");
     for (let i = 0; i < linksArr.length; i++) {
@@ -27,8 +30,8 @@ async function run() {
         let response = await data(videoId, i);
         res.push(response)
     }
-    url = '';
 
+    document.getElementById('url').value = '';
     if (localStorage.getItem('apikey')) {
         const loader = document.getElementById('loader');
         loader.style.display = 'block';
@@ -39,6 +42,7 @@ async function run() {
         alert("Please enter the API key first to use ai!!!");
         return;
     }
+
 }
 
 async function data(videoId, i) {
