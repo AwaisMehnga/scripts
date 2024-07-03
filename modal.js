@@ -13,7 +13,7 @@ function showTags(i) {
     var modal = document.getElementById("myModal");
     var modalBody = document.getElementById("modalBody");
 
-    if (res[i].tg.length !== 0) {
+    if (res[i].tg != undefined) {
         res[i].tg.forEach(keyword => {
             const span = document.createElement('span');
             span.textContent = keyword;
