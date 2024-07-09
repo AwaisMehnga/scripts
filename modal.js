@@ -36,7 +36,6 @@ function showTags(i) {
     modal.style.display = "block";
 }
 
-
 // Function to update selected keywords
 function updateSelectedKeywords() {
     const selectedElements = modalBody.querySelectorAll('.selected');
