@@ -37,7 +37,7 @@ async function run() {
 
         window.aiResponse();
     } else {
-        alert("Please enter the API key first to use ai!!!");
+        alert("Open menu and get a free API by clicking \"get api\"!!!");
         return;
     }
 }
